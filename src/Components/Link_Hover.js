@@ -17,8 +17,9 @@ const LinkHover = styled.div`
   justify-content: center;
   align-content: center;
   align-items: stretch;
-  background-color: red;
+  background-color: #ebfbff;
   border-radius: 500px;
+  outline: 2px solid blue;
   width: 133px;
   height: 27px;
   transition: 1s background-color;
@@ -62,6 +63,7 @@ const LinkEl = (props) => {
   if (hover === false) {
     return (
       <Link onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+        <Favicon src="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png" />
         <LinkTitle>off</LinkTitle>
       </Link>
     );
@@ -69,6 +71,7 @@ const LinkEl = (props) => {
   // After hover
   return (
     <LinkHover onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+      <Favicon src="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png" />
       <LinkTitle>on</LinkTitle>
     </LinkHover>
   );
