@@ -1,12 +1,19 @@
 import "./styles.css";
-import Link from "./Components/Link_Hover";
+import LinkEl from "./Components/Link_Hover";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <Link></Link>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>Link</h1>
+      <div className="flex-container">
+        <LinkEl />
+        <LinkEl />
+        <LinkEl />
+        <LinkEl />
+        <LinkEl />
+        <LinkEl />
+      </div>
+      <h2>Testing the link hover component animation</h2>
     </div>
   );
 }

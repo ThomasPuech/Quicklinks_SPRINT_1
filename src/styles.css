@@ -1,4 +1,33 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  background-color: white;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.Link {
+  /* position: absolute; */
+
+  display: inline;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  z-index: 1;
+  background-color: blue;
+  border-radius: 500px;
+  width: 133px;
+  height: 27px;
+
+  transition: height 0.5s, flex-grow 0.5s, z-index 0.5s, position 0.5s;
+}
+.Link:hover {
+  visibility: hidden;
+  z-index: 2;
+  flex-grow: 2;
+  height: 100px;
+  transition-delay: 0.4s;
 }
