@@ -14,11 +14,11 @@ const Link = styled.div`
   /* flex-basis: auto; */
 `;
 
-// Before Hover
+// After Hover
 const LinkHover = styled.div`
   background-color: #ebfbff;
   border-radius: 500px;
-  outline: 2px solid blue;
+  outline: 1px solid blue;
   height: fit-content;
   width: fit-content;
   margin-right: 10px;
@@ -44,7 +44,9 @@ const LinkTitle = styled.p`
 
 const Favicon = styled.img`
   /* display: inline-block; */
-
+  /* :hover {
+    outline: 1px solid blue;
+  } */
   vertical-align: middle;
   display: inline-block;
   margin-left: 0px;
@@ -55,14 +57,23 @@ const Favicon = styled.img`
 const LinkEl = (props) => {
   const [hover, setHover] = useState(false);
 
-  function toggleHover() {
-    setHover((current) => !current);
+  function time() {
+    setTimeout(() => setHover((current) => !current), 800);
+  }
+
+  function toggleHoverOff(e) {
+    clearTimeout(time);
+    setHover(false);
+  }
+
+  function toggleHover(e) {
+    time();
   }
 
   // Before Hover
   if (hover === false) {
     return (
-      <Link onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+      <Link onMouseEnter={toggleHover} onMouseLeave={toggleHoverOff}>
         <Favicon src="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png" />
         <LinkTitle>offevkflwmekfewv</LinkTitle>
       </Link>
@@ -70,7 +81,7 @@ const LinkEl = (props) => {
   }
   // After hover
   return (
-    <LinkHover onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+    <LinkHover onMouseLeave={toggleHoverOff}>
       <Favicon src="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png" />
       <LinkTitle>offevkflwmekfewv</LinkTitle>
     </LinkHover>
