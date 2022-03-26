@@ -2,26 +2,33 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Link = styled.div`
+  display: flex;
   background-color: #ebfbff;
   border-radius: 500px;
   width: 133px;
   height: 27px;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
 `;
 
 const LinkHover = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
   background-color: red;
   border-radius: 500px;
   width: 133px;
   height: 27px;
   transition: 1s background-color;
-  :hover {
+  /* :hover {
     background-color: red;
     transition-delay: 1s;
-  }
+  } */
   /* animation-iteration-count: 1;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards; */
-  /* transition-delay: 1s; */
   /* animation: 0.5s mymove;
   @keyframes mymove {
     from {
@@ -31,7 +38,18 @@ const LinkHover = styled.div`
       height: 270px;
     }
   } */
+  /* transition-delay: 1s; */
 `;
+
+const LinkTitle = styled.p`
+  font-size: 13px;
+  align-content: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+`;
+
+const Favicon = styled.img``;
 
 const LinkEl = (props) => {
   const [hover, setHover] = useState(false);
@@ -40,16 +58,18 @@ const LinkEl = (props) => {
     setHover((current) => !current);
   }
 
+  // Before Hover
   if (hover === false) {
     return (
       <Link onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-        off
+        <LinkTitle>off</LinkTitle>
       </Link>
     );
   }
+  // After hover
   return (
     <LinkHover onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-      on
+      <LinkTitle>on</LinkTitle>
     </LinkHover>
   );
 };

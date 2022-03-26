@@ -31,3 +31,33 @@
   height: 100px;
   transition-delay: 0.4s;
 }
+/* hide and show on hover*/
+.box1,
+.box2 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.box1 {
+  display: block;
+}
+
+.box2 {
+  display: none;
+}
+
+.wrapper {
+  width: auto;
+  display: inline-block;
+  background-color: red;
+}
+
+.wrapper:hover .box1 {
+  display: none;
+}
+
+.wrapper:hover .box2 {
+  display: block;
+}
