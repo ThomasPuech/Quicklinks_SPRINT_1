@@ -1,56 +1,56 @@
 import { useState } from "react";
 import styled from "styled-components";
 
+// Before Hover
 const Link = styled.div`
-  display: flex;
   background-color: #ebfbff;
   border-radius: 500px;
-  width: 133px;
-  height: 27px;
-  justify-content: center;
-  align-content: center;
-  align-items: stretch;
+  width: fit-content;
+  height: fit-content;
+  margin-right: 10px;
+  margin-bottom: 5px;
+
+  /* width: fit-content; */
+  /* flex-basis: auto; */
 `;
 
+// Before Hover
 const LinkHover = styled.div`
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: stretch;
   background-color: #ebfbff;
   border-radius: 500px;
   outline: 2px solid blue;
-  width: 133px;
-  height: 27px;
-  transition: 1s background-color;
-  /* :hover {
-    background-color: red;
-    transition-delay: 1s;
-  } */
-  /* animation-iteration-count: 1;
-  animation-direction: alternate-reverse;
-  animation-fill-mode: forwards; */
-  /* animation: 0.5s mymove;
-  @keyframes mymove {
-    from {
-      height: 27px;
-    }
-    to {
-      height: 270px;
-    }
-  } */
-  /* transition-delay: 1s; */
+  height: fit-content;
+  width: fit-content;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  /* width: fit-content; */
+  /* flex-basis: auto; */
 `;
 
 const LinkTitle = styled.p`
+  vertical-align: middle;
+  display: inline-block;
   font-size: 13px;
-  align-content: center;
-  text-align: center;
+  margin-left: 5px;
+  margin-right: 10px;
   margin-top: auto;
-  margin-bottom: auto;
+  height: 0px;
+
+  /* padding-bottom: 20px; */
 `;
 
-const Favicon = styled.img``;
+const Favicon = styled.img`
+  /* display: inline-block; */
+
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 0px;
+  border-radius: 27px;
+  height: 27px;
+`;
 
 const LinkEl = (props) => {
   const [hover, setHover] = useState(false);
@@ -64,7 +64,7 @@ const LinkEl = (props) => {
     return (
       <Link onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
         <Favicon src="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png" />
-        <LinkTitle>off</LinkTitle>
+        <LinkTitle>offevkflwmekfewv</LinkTitle>
       </Link>
     );
   }
@@ -72,7 +72,7 @@ const LinkEl = (props) => {
   return (
     <LinkHover onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
       <Favicon src="https://perishablepress.com/wp/wp-content/images/2021/favicon-standard.png" />
-      <LinkTitle>on</LinkTitle>
+      <LinkTitle>offevkflwmekfewv</LinkTitle>
     </LinkHover>
   );
 };
