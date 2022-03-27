@@ -57,17 +57,21 @@ const Favicon = styled.img`
 const LinkEl = (props) => {
   const [hover, setHover] = useState(false);
 
-  function time() {
-    setTimeout(() => setHover((current) => !current), 800);
-  }
-
   function toggleHoverOff(e) {
-    clearTimeout(time);
+    // clearTimeout(time);
     setHover(false);
   }
 
+  function time(e) {
+    setTimeout((e) => setHover(true), 800);
+  }
+
   function toggleHover(e) {
-    time();
+    time(e);
+    // useless but tried
+    if (toggleHoverOff()) {
+      setHover(false);
+    }
   }
 
   // Before Hover
